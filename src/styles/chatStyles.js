@@ -67,18 +67,21 @@ export const styles = {
     // 3. CHAT AREA: The "Middle" part that scrolls
     chatArea: {
         flex: 1,               // Takes up all remaining vertical space
-        overflowY: "auto",     // Enables scrolling ONLY here
+        overflowY: "auto",
+        overflowX: "hidden",
         width: "100%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",  // Centers the message container
         paddingTop: "20px",
+
+
         paddingBottom: "20px",
         scrollBehavior: "smooth",
     },
 
     messagesContainer: {
-        width: "100%",
+        width: "90%",
         maxWidth: "800px",     // Limits width for better readability
         padding: "0 20px",
         display: "flex",
