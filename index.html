@@ -2,11 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-ai-agent</title>
+
+    <meta name="theme-color" content="#6D28D9" />
+    <title>Anamika AI</title>
+
+    <style>
+      /* STARTING ANIMATION STYLES */
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+
+      .pulse-logo {
+        width: 80px;
+        height: 80px;
+        background-color: #6d28d9;
+        border-radius: 20px; /* Matching your logo shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+
+      .loading-text {
+        margin-top: 20px;
+        font-family: "Inter", sans-serif;
+        color: #6d28d9;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+      }
+
+      .loader-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
+    <div id="initial-loader">
+      <div class="pulse-logo">A</div>
+      <div class="loading-text">Anamika AI is starting...</div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
